@@ -1,7 +1,7 @@
 import WelcomeMessage from './components/WelcomeMessage'
-import { Header } from './components/Header'
-import { MainContent } from './components/MainContent'
-import { Footer } from './components/Footer'
+import Header from './components/Header'
+import MainContent from './components/MainContent'
+import Footer from './components/Footer'
 import { useState } from 'react'
 import './App.css'
 
