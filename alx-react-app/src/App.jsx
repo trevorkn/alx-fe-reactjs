@@ -1,7 +1,7 @@
 import WelcomeMessage from './components/WelcomeMessage'
-import { MyHeader } from './components/Header'
+import { Header } from './components/Header'
 import { MainContent } from './components/MainContent'
-import { MyFooter } from './components/Footer'
+import { Footer } from './components/Footer'
 import { useState } from 'react'
 import './App.css'
 
@@ -12,9 +12,9 @@ function App() {
     <>
     
    <WelcomeMessage />
-   <MyHeader />
+   <Header />
    <MainContent />
-   <MyFooter />
+   <Footer />
     </>
   )
 }
