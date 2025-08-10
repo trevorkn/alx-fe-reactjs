@@ -1,6 +1,6 @@
 import ProfilePage from './ProfilePage';
 import React from 'react';
-import UserContext from './context/UserContext';
+import { UserContext } from './context/UserContext';
 
 function App() {
   const userData = {

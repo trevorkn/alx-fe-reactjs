@@ -1,11 +1,17 @@
+import React, { useContext } from 'react';
+import { UserContext } from './context/UserContext';
 
-function userDetails({userDetails}) {
+function UserDetails() {
+    const userData = useContext(UserContext);
+    if (!userData) {
+        return <p>No user data found.</p>;
+    }
     return (
         <div>
-            <p>Name: {userDetails.Name}</p>
-            <p>Email: {userDetails.email}</p>
+            <p>Name: {userData.name}</p>
+            <p>Email: {userData.email}</p>
         </div>
-    )
+    );
 }
 
-export default userDetails;
+export default UserDetails;

@@ -1,18 +1,8 @@
-import React, { useContext } from 'react';
-import UserContext from './context/UserContext';
+import React from 'react';
+import UserDetails from './userDetails';
 
 function UserInfo() {
-    const userData = useContext(UserContext);
-
-    if (!userData) {
-        return <p>No answer found.</p>;
-    }
-    return(
-        <div>
-            <h2>{userData?.name}</h2>
-            <p>{userData?.email}</p>
-        </div>
-    );
+    return <UserDetails />;
 }
 
 export default UserInfo;
