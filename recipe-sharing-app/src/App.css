@@ -1,82 +1,64 @@
-/* Retro Dark Vintage Theme */
-
+/* Vintage Dark Mode Theme */
 body {
   margin: 0;
-  font-family: 'Roboto Mono', monospace;
-  background-color: #121212; /* true dark */
-  color: #d8cfc4; /* faded vintage beige */
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #1b1b1b; /* deep dark background */
+  color: #e0d6c7; /* faded parchment text */
   line-height: 1.6;
 }
 
 h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  color: #f4d58d; /* muted golden amber */
-  text-shadow: 0 0 6px rgba(244, 213, 141, 0.2);
-  margin-bottom: 0.5rem;
+  font-family: 'Georgia', serif;
+  color: #f5e2b8; /* warm vintage gold */
+  text-shadow: 1px 1px 0px #000;
 }
 
 a {
-  color: #7fc7c4; /* retro teal */
+  color: #d4a373;
   text-decoration: none;
-  transition: all 0.3s ease;
+  border-bottom: 1px dashed #d4a373;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 a:hover {
-  color: #f4d58d;
-  text-shadow: 0 0 6px rgba(244, 213, 141, 0.4);
+  color: #f5e2b8;
+  border-color: #f5e2b8;
 }
 
 nav {
-  background: #1e1e1e;
-  padding: 0.6rem 1rem;
-  border-bottom: 1px solid #2e2e2e;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  background-color: #2b2a28;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid #3e3b38;
 }
 
 button {
-  background: #1f1f1f;
-  color: #7fc7c4;
-  border: 1px solid #3c3c3c;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  background: linear-gradient(145deg, #3e3b38, #2b2a28);
+  color: #f5e2b8;
+  border: 1px solid #5c5348;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
   cursor: pointer;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Courier New', monospace;
   transition: all 0.3s ease;
 }
 button:hover {
-  background: #2b2b2b;
-  color: #f4d58d;
-  box-shadow: 0 0 8px rgba(244, 213, 141, 0.3);
-  transform: translateY(-2px);
+  background: linear-gradient(145deg, #2b2a28, #3e3b38);
+  transform: scale(1.05);
 }
 
 form input,
 form textarea {
-  background: #1a1a1a;
-  border: 1px solid #333;
-  color: #d8cfc4;
-  padding: 0.5rem;
-  margin-bottom: 0.7rem;
+  background-color: #2b2a28;
+  border: 1px solid #5c5348;
+  color: #e0d6c7;
+  padding: 0.4rem;
+  margin-bottom: 0.5rem;
   width: 100%;
   font-family: inherit;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 form input:focus,
 form textarea:focus {
   outline: none;
-  border-color: #7fc7c4;
-  box-shadow: 0 0 6px rgba(127, 199, 196, 0.4);
-}
-
-.recipe-card {
-  background: #1a1a1a;
-  border: 1px solid #2e2e2e;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.recipe-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.8);
+  border-color: #d4a373;
+  background-color: #3e3b38;
 }
