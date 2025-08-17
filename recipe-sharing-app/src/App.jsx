@@ -2,7 +2,8 @@ import { Routes, Route, Link, Navigate } from 'react-router-dom';
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeDetails from './components/RecipeDetails';
-
+import SearchBar from './components/SearchBar';
+import './App.css'
 function App() {
 //using BrowserRouter for routing
   return (
@@ -10,6 +11,7 @@ function App() {
     <h1>Recipe Sharing App</h1>
     <nav style={{ marginBottom: '1rem' }}>
       <Link to="/">Home</Link>
+      <SearchBar />
     </nav>
 
     <Routes>
