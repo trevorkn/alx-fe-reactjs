@@ -13,7 +13,7 @@ const EditRecipeForm = ({ recipe }) => {
     }, [recipe.id, recipe.title, recipe.description])
 
 const handleSubmit = (e) => {
-    e.preventDefault()
+    event.preventDefault()
     if (!title.trim() || !description.trim()) return
     updateRecipe(recipe.id, {title, description})
 }
