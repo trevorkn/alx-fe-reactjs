@@ -1,15 +1,31 @@
-
+import { Routes, Route, Link, Navigate } from 'react-router-dom';
 import RecipeList from './components/RecipeList';
-
 import AddRecipeForm from './components/AddRecipeForm';
+import RecipeDetails from './components/RecipeDetails';
 
 function App() {
 
   return (
     <>
     <h1>Recipe Sharing App</h1>
-     <RecipeList />
-     <AddRecipeForm />
+    <nav style={{ marginBottom: '1rem' }}>
+      <Link to="/">Home</Link>
+    </nav>
+
+    <Routes>
+      <Route 
+        path="/"
+        element={
+          <>
+          <RecipeList />
+          <AddRecipeForm />
+          </>
+        }
+        />
+    <Route path="/recipes/:id" element={<RecipeDetails />} />
+    <Route path="*" element={<Navigate to="/" replace /> } />
+    </Routes>
+ 
     </>
   )
 }
