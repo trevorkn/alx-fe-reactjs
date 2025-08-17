@@ -4,7 +4,7 @@ import AddRecipeForm from './components/AddRecipeForm';
 import RecipeDetails from './components/RecipeDetails';
 
 function App() {
-
+//using BrowserRouter for routing
   return (
     <>
     <h1>Recipe Sharing App</h1>
