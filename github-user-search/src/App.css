@@ -1,12 +1,24 @@
-/* App.css — dark theme */
+/* App.css — Dark Vintage Theme */
 
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #0d0e10; /* deep retro dark */
+  color: #d8cfc4; /* faded vintage beige */
+  font-family: 'Roboto Mono', monospace, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* App wrapper */
 .app {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  background: #0f1115;
-  color: #e6e6e6;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background: #0d0e10;
+  color: #d8cfc4;
 }
 
 /* Container */
@@ -18,8 +30,8 @@
 
 /* Header */
 .header {
-  border-bottom: 1px solid #23252b;
-  background: #12141a;
+  border-bottom: 1px solid #1c1e23;
+  background: #121316;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -30,8 +42,9 @@
 .brand {
   font-weight: 700;
   text-decoration: none;
-  color: #e6e6e6;
+  color: #e0d8cd; /* warmer off-white */
   padding: 0.875rem 0;
+  letter-spacing: 0.5px;
 }
 
 .nav {
@@ -43,7 +56,11 @@
 
 .nav-link {
   text-decoration: none;
-  color: #c9c9c9;
+  color: #b9b1a7;
+  transition: color 0.2s ease;
+}
+.nav-link:hover {
+  color: #e0d8cd;
 }
 
 /* Main */
@@ -55,10 +72,11 @@
 .h1 {
   font-size: 1.75rem;
   margin: 0 0 0.5rem;
+  color: #f0e6db; /* vintage highlight */
 }
 
 .muted {
-  color: #a3a3a3;
+  color: #9a9287;
   margin-bottom: 1.25rem;
 }
 
@@ -75,40 +93,44 @@
   padding: 0.75rem 0.9rem;
   border-radius: 12px;
   border: 1px solid #2a2d37;
-  background: #161922;
-  color: #e6e6e6;
+  background: #161718;
+  color: #e0d8cd;
   outline: none;
+}
+.input:focus {
+  border-color: #9ecbff; /* retro highlight */
 }
 
 .button {
   padding: 0.75rem 1rem;
   border-radius: 12px;
   border: 1px solid #2a2d37;
-  background: #1b1f2a;
-  color: #e6e6e6;
+  background: #1b1c1f;
+  color: #e0d8cd;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .button:hover {
-  background: #252a38;
+  background: #2a2b2e;
 }
 
 /* Links */
 .link {
-  color: #9ecbff;
+  color: #d8b892; /* muted warm gold */
   text-decoration: underline;
 }
 
 .accent {
-  color: #9ecbff;
+  color: #d8b892;
 }
 
 /* Footer */
 .footer {
-  border-top: 1px solid #23252b;
-  background: #12141a;
+  border-top: 1px solid #1c1e23;
+  background: #121316;
   padding: 1rem 0;
   font-size: 0.9rem;
-  color: #a3a3a3;
+  color: #9a9287;
   text-align: center;
 }
