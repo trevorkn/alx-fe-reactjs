@@ -1,3 +1,7 @@
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
+import Search from '../components/Search';
+
 function HomePage() {
   const [username, setUsername] = useState("");
   const navigate = useNavigate();
@@ -12,6 +16,7 @@ function HomePage() {
   return (
     <section>
       <h1 className="h1"> Find a GitHub user</h1>
+      <Search />
       <p className='muted'>Type a username and hit Enter. We'll wire this  up to the GitHub API next.</p>
 
       <form onSubmit={onSubmit} className='form'>
