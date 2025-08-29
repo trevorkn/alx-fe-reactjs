@@ -1,0 +1,20 @@
+[
+{
+    "id": 1,
+    "title": "Spagheti carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese,bacon, and black pepper.",
+    "image": "/spagheticarbonara.jpg"
+},
+{
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "/Chicken-Tikka-Masala.webp"
+},
+{
+    "id": 3,
+    "title": "Avocado Toast",
+    "summary": "Toasted bread topped with mashed avocado, olive oil, lemon juice, and seasoning.",
+    "image": "/avocado-toast.webp"
+}
+]
