@@ -13,7 +13,7 @@ export default function HomePage() {
         <div className="min-h-screen bg-gray-100 p-6">
             <h1 className="text-3xl font-bold text-center mb-8"> Recipe sharing Platform</h1>
 
-            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-1">
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 grid-cols-1">
                 {recipes.map((recipe) => (
                     <div
                     key={recipe.id}
