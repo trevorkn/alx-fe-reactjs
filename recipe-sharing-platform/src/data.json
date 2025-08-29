@@ -3,18 +3,70 @@
     "id": 1,
     "title": "Spagheti carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese,bacon, and black pepper.",
-    "image": "/spagheticarbonara.jpg"
+    "image": "/spagheticarbonara.jpg",
+    "ingredients" : [
+      "200g spaghetti",
+      "100g pancetta or bacon",
+      "2 large eggs",
+      "50g pecorino cheese",
+      "Black pepper"  
+    ],
+    "instructions" : [
+      "Boil spaghetti in salted water until al dente.",
+      "Fry pancetta until crispy.",
+      "Beat eggs and mix with grated cheese.",
+      "Drain spaghetti and combine with pancetta.",
+      "Remove from heat and stir in egg-cheese mixture.",
+      "Season with black pepper and serve immediately."
+    ]
 },
 {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "/Chicken-Tikka-Masala.webp"
+    "image": "/Chicken-Tikka-Masala.webp",
+    "ingredients": [
+     "500g boneless chicken pieces",
+      "1 cup yogurt",
+      "2 tbsp lemon juice",
+      "2 tsp garam masala",
+      "1 tsp turmeric",
+      "1 tsp chili powder",
+      "1 tbsp ginger-garlic paste",
+      "400g canned tomato puree",
+      "1/2 cup cream",
+      "2 tbsp butter",
+      "Salt to taste",
+      "Coriander leaves for garnish"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt, lemon juice, ginger-garlic paste, turmeric, chili powder, and salt for at least 1 hour.",
+      "Grill or bake the chicken until cooked through.",
+      "Heat butter in a pan, add tomato puree and garam masala, cook for 10 minutes.",
+      "Add cream and simmer for 5 minutes.",
+      "Add cooked chicken to the gravy and mix well.",
+      "Garnish with coriander leaves and serve with rice or naan."
+    ]
 },
 {
     "id": 3,
     "title": "Avocado Toast",
     "summary": "Toasted bread topped with mashed avocado, olive oil, lemon juice, and seasoning.",
-    "image": "/avocado-toast.webp"
+    "image": "/avocado-toast.webp",
+    "ingredients": [
+       "2 slices of whole grain bread",
+      "1 ripe avocado",
+      "1 tsp lemon juice",
+      "1 tbsp olive oil",
+      "Salt and pepper to taste",
+      "Optional toppings: cherry tomatoes, feta cheese, chili flakes"
+    ],
+    "instructions": [
+     "Toast the bread slices to your liking.",
+      "Mash the avocado in a bowl, add lemon juice, olive oil, salt, and pepper.",
+      "Spread the mashed avocado evenly on the toasted bread.",
+      "Add optional toppings if desired.",
+      "Serve immediately."
+    ]
 }
 ]
