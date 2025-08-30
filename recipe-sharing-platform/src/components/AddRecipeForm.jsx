@@ -26,7 +26,7 @@ export default function AddRecipeForm({ onAdd }) {
       summary: instructions.split("\n")[0] || "New Recipe",
       image: "/placeholder.jpg", // You can replace with actual image upload later
       ingredients: ingredients.split(",").map((item) => item.trim()),
-      instructions: instructions.split("\n").map((step) => step.trim()),
+      steps: instructions.split("\n").map((step) => step.trim()),
     };
 
     onAdd(newRecipe);
