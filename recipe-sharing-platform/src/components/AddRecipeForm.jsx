@@ -3,18 +3,23 @@ import React, { useState } from "react";
 export default function AddRecipeForm({ onAdd }) {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
-  const [instructions, setInstructions] = useState("");
+  const [steps, setSteps] = useState("");
   const [errors, setErrors] = useState({});
+
+  // Validation function
+  const validate = () => {
+    const errors = {};
+    if (!title.trim()) errors.title = "Title is required";
+    if (!ingredients.trim() || ingredients.split(",").length < 2)
+      errors.ingredients = "Enter at least 2 ingredients, separated by commas";
+    if (!steps.trim()) errors.steps = "Steps are required";
+    return errors;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newErrors = {};
-    if (!title.trim()) newErrors.title = "Title is required";
-    if (!ingredients.trim() || ingredients.split(",").length < 2)
-      newErrors.ingredients = "Enter at least 2 ingredients, separated by commas";
-    if (!instructions.trim()) newErrors.instructions = "Instructions are required";
-
+    const newErrors = validate();
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
@@ -23,10 +28,10 @@ export default function AddRecipeForm({ onAdd }) {
     const newRecipe = {
       id: Date.now(),
       title,
-      summary: instructions.split("\n")[0] || "New Recipe",
-      image: "/placeholder.jpg", // You can replace with actual image upload later
+      summary: steps.split("\n")[0] || "New Recipe",
+      image: "/placeholder.jpg", // Replace with uploaded image later
       ingredients: ingredients.split(",").map((item) => item.trim()),
-      steps: instructions.split("\n").map((step) => step.trim()),
+      steps: steps.split("\n").map((step) => step.trim()),
     };
 
     onAdd(newRecipe);
@@ -34,7 +39,7 @@ export default function AddRecipeForm({ onAdd }) {
     // Reset form
     setTitle("");
     setIngredients("");
-    setInstructions("");
+    setSteps("");
     setErrors({});
   };
 
@@ -45,6 +50,7 @@ export default function AddRecipeForm({ onAdd }) {
     >
       <h2 className="text-2xl font-bold mb-4">Add New Recipe</h2>
 
+      {/* Title */}
       <div>
         <label className="block mb-1 font-semibold">Title</label>
         <input
@@ -56,6 +62,7 @@ export default function AddRecipeForm({ onAdd }) {
         {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
       </div>
 
+      {/* Ingredients */}
       <div>
         <label className="block mb-1 font-semibold">Ingredients (comma separated)</label>
         <textarea
@@ -67,17 +74,19 @@ export default function AddRecipeForm({ onAdd }) {
         {errors.ingredients && <p className="text-red-500 text-sm mt-1">{errors.ingredients}</p>}
       </div>
 
+      {/* Steps */}
       <div>
-        <label className="block mb-1 font-semibold">Instructions (one per line)</label>
+        <label className="block mb-1 font-semibold">Steps (one per line)</label>
         <textarea
-          value={instructions}
-          onChange={(e) => setInstructions(e.target.value)}
+          value={steps}
+          onChange={(e) => setSteps(e.target.value)}
           rows={5}
           className="w-full border rounded-md p-2 focus:ring-2 focus:ring-blue-400"
         />
-        {errors.instructions && <p className="text-red-500 text-sm mt-1">{errors.instructions}</p>}
+        {errors.steps && <p className="text-red-500 text-sm mt-1">{errors.steps}</p>}
       </div>
 
+      {/* Submit */}
       <button
         type="submit"
         className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors"
