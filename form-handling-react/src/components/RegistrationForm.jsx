@@ -20,7 +20,7 @@ function RegistrationForm() {
             newErrors.email = "Email is invalid";
         }
 
-        if  (!password) {
+        if (!password) {
             newErrors.password = "Password is required";
         }else if (password.length < 6) {
             newErrors.password = "Password must be atleast 6 characters long!";
