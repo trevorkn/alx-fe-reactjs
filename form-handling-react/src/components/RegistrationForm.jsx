@@ -9,9 +9,12 @@ function RegistrationForm() {
    const validate = () => {
         const newErrors = {};
 
-        if (!username.trim()) newErrors.username = "Name is required";
+        if (!username) {
+             newErrors.username = "Name is required";
 
-        if (!email.trim()) {
+        }
+
+        if (!email) {
             newErrors.email = "Email is required";
         } else if (!/\S+@\S+\.\S+/.test(email)) {
             newErrors.email = "Email is invalid";
@@ -49,7 +52,7 @@ function RegistrationForm() {
                 type='text'
                 id='username'
                 value={username}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setUsername(e.target.value)}
                 />
                 {errors.username && <p style={{color: "red"}}> {errors.username}</p>}
         </div>
