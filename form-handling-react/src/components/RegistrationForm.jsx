@@ -1,7 +1,7 @@
 import React , { useState } from 'react'
 
 function RegistrationForm() {
-   const [name, setName ] = useState("");
+   const [username, setUsername ] = useState("");
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
    const [errors, setErrors] = useState({});
@@ -9,7 +9,7 @@ function RegistrationForm() {
    const validate = () => {
         const newErrors = {};
 
-        if (!name.trim()) newErrors.name = "Name is required";
+        if (!username.trim()) newErrors.username = "Name is required";
 
         if (!email.trim()) {
             newErrors.email = "Email is required";
@@ -31,10 +31,10 @@ function RegistrationForm() {
                 setErrors(validationErrors);
             } else {
                 setErrors({});
-                console.log({ name, email, password });
+                console.log({ username, email, password });
                 // Send data to server here
                 alert("Form submitted successfully")
-                setName("");
+                setUsername("");
                 setEmail("");
                 setPassword("");
                 
@@ -44,14 +44,14 @@ function RegistrationForm() {
   return (
     <form onSubmit={handleSubmit}>
         <div>
-            <label htmlFor='name'>Name:</label>
+            <label htmlFor='username'>Name:</label>
             <input
                 type='text'
-                id='name'
-                value={name}
+                id='username'
+                value={username}
                 onChange={(e) => setName(e.target.value)}
                 />
-                {errors.name && <p style={{color: "red"}}> {errors.name}</p>}
+                {errors.username && <p style={{color: "red"}}> {errors.username}</p>}
         </div>
         <div>
             <label htmlFor="email">Email:</label>
