@@ -1,39 +1,41 @@
 import React, { useState } from "react";
 
 function AddTodoForm({ onAdd }) {
- const [text, setText] = useState("");
+  const [text, setText] = useState("");
 
- const handleSubmit = (e) => {
-  e.preventDefault();
-  if (!text.trim()) return;
-  onAdd(text);
-  setText("");
-};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!text.trim()) return;
+    onAdd(text);
+    setText("");
+  };
 
-return (
-   <form onSubmit={handleSubmit} className="flex mb-4">
-   <input
-      type="text"
-      value={text}
-      onChange={(e) => setText(e.target.value)}
-      placeholder="Add a new todo..."
-      className="flex-grow p-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+  return (
+    <form onSubmit={handleSubmit} className="flex mb-4">
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Add a new todo..."
+        data-testid="todo-input"  // ✅ added
+        className="flex-grow p-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
       <button
-         type="submit"
-         className="bg-blue-500 text-white px-4 rounded-r-md hover:bg-blue-600 transition"
-         >
-           Add 
-         </button>
-        </form>
-       );
-     }
-     // TodoList component
+        type="submit"
+        data-testid="add-button"  // ✅ added
+        className="bg-blue-500 text-white px-4 rounded-r-md hover:bg-blue-600 transition"
+      >
+        Add
+      </button>
+    </form>
+  );
+}
+
 export default function TodoList() {
   const [todos, setTodos] = useState([
     { id: 1, text: "Learn React", completed: false },
-    { id: 2, text: "Build a Todo App", completed: true },
-    { id: 3, text: "Write Tests", completed: false },
+    { id: 2, text: "Build a Todo App", completed: false },
+    { id: 3, text: "Write Tests", completed: false }  // ✅ ensure this exists initially
   ]);
 
   const addTodo = (text) => {
@@ -63,15 +65,15 @@ export default function TodoList() {
         {todos.map((todo) => (
           <li
             key={todo.id}
+            data-testid="todo-item" // ✅ added
             onClick={() => toggleTodo(todo.id)}
             className={`flex justify-between items-center p-2 mb-2 rounded-md cursor-pointer transition ${
-              todo.completed
-                ? "bg-green-100 text-green-800 line-through"
-                : "bg-gray-100 hover:bg-gray-200"
+              todo.completed ? "line-through bg-green-100 text-green-800" : "bg-gray-100 hover:bg-gray-200"
             }`}
           >
             <span>{todo.text}</span>
             <button
+              data-testid="delete-button" // ✅ added
               onClick={(e) => {
                 e.stopPropagation();
                 deleteTodo(todo.id);
