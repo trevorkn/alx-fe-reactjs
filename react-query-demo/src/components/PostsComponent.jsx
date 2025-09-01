@@ -3,7 +3,6 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 export default function PostsComponent() {
   const queryClient = useQueryClient();
 
-  // Fetch function with literal URL inside this file
   async function fetchPosts() {
     const res = await fetch('https://jsonplaceholder.typicode.com/posts');
     if (!res.ok) throw new Error(`Error ${res.status}: Failed to fetch posts`);
@@ -13,6 +12,10 @@ export default function PostsComponent() {
   const { data, isLoading, isError, error, refetch, isFetching } = useQuery({
     queryKey: ['posts'],
     queryFn: fetchPosts,
+    staleTime: 60 * 1000,
+    cacheTime: 5 * 60 * 1000,
+    refetchOnWindowFocus: false,
+    keepPreviousData: true,
   });
 
   const handleInvalidate = () => {
