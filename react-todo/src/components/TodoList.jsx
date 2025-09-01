@@ -5,28 +5,21 @@ function AddTodoForm({ onAdd }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!text.trim()) return;
+    if (text.trim() === "") return;
     onAdd(text);
     setText("");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex mb-4">
+    <form onSubmit={handleSubmit} data-testid="add-todo-form">
       <input
         type="text"
+        placeholder="Add a todo..."
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Add a new todo..."
-        data-testid="todo-input"  // ✅ added
-        className="flex-grow p-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        data-testid="todo-input"
       />
-      <button
-        type="submit"
-        data-testid="add-button"  // ✅ added
-        className="bg-blue-500 text-white px-4 rounded-r-md hover:bg-blue-600 transition"
-      >
-        Add
-      </button>
+      <button type="submit" data-testid="add-button">Add</button>
     </form>
   );
 }
@@ -34,13 +27,16 @@ function AddTodoForm({ onAdd }) {
 export default function TodoList() {
   const [todos, setTodos] = useState([
     { id: 1, text: "Learn React", completed: false },
-    { id: 2, text: "Build a Todo App", completed: false },
-    { id: 3, text: "Write Tests", completed: false }  // ✅ ensure this exists initially
+    { id: 2, text: "Build Todo App", completed: true },
   ]);
 
   const addTodo = (text) => {
-    const newTodo = { id: Date.now(), text, completed: false };
-    setTodos([newTodo, ...todos]);
+    const newTodo = {
+      id: Date.now(),
+      text,
+      completed: false,
+    };
+    setTodos([...todos, newTodo]);
   };
 
   const toggleTodo = (id) => {
@@ -56,31 +52,29 @@ export default function TodoList() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
-      <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">
-        My Todo List
-      </h2>
+    <div>
+      <h1>Todo List</h1>
       <AddTodoForm onAdd={addTodo} />
-      <ul>
+      <ul data-testid="todo-list">
         {todos.map((todo) => (
           <li
             key={todo.id}
-            data-testid="todo-item" // ✅ added
             onClick={() => toggleTodo(todo.id)}
-            className={`flex justify-between items-center p-2 mb-2 rounded-md cursor-pointer transition ${
-              todo.completed ? "line-through bg-green-100 text-green-800" : "bg-gray-100 hover:bg-gray-200"
-            }`}
+            style={{
+              textDecoration: todo.completed ? "line-through" : "none",
+              cursor: "pointer",
+            }}
+            data-testid="todo-item"
           >
-            <span>{todo.text}</span>
+            {todo.text}
             <button
-              data-testid="delete-button" // ✅ added
               onClick={(e) => {
                 e.stopPropagation();
                 deleteTodo(todo.id);
               }}
-              className="text-red-500 hover:text-red-700 font-bold"
+              data-testid="delete-button"
             >
-              Delete
+              X
             </button>
           </li>
         ))}
