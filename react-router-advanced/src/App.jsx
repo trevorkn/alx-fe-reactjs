@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import BlogPost from "./pages/BlogPost";
 import Profile from "./components/Profile";
 import Login from "./pages/Login";
-import ProtectedRoute from './components/protectedRoute';
+import ProtectedRoute from './components/ProtectedRoute';
 
 export default function App() {
 
