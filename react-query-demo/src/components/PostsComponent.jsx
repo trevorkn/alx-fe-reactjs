@@ -1,15 +1,14 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 
-const BASE_URL = 'https://jsonplaceholder.typicode.com';
-
-async function fetchPosts() {
-  const res = await fetch(`${BASE_URL}/posts`);
-  if (!res.ok) throw new Error(`Error ${res.status}: Failed to fetch posts`);
-  return res.json();
-}
-
 export default function PostsComponent() {
   const queryClient = useQueryClient();
+
+  // Fetch function with literal URL inside this file
+  async function fetchPosts() {
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+    if (!res.ok) throw new Error(`Error ${res.status}: Failed to fetch posts`);
+    return res.json();
+  }
 
   const { data, isLoading, isError, error, refetch, isFetching } = useQuery({
     queryKey: ['posts'],
