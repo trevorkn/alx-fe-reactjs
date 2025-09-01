@@ -15,7 +15,7 @@ const queryClient = new QueryClient({
     },
   },
 })
-
+ //PostsComponent
 export default function App() {
   //Dark-mode default
   useEffect(() => {
