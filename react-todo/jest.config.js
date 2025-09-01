@@ -1,6 +1,6 @@
 /** @type {import('jest').Config} */
-module.exports = {
-  testEnvironment: "jsdom",
+export default {
+  testEnvironment: "jest-environment-jsdom",
   transform: {
     "^.+\\.jsx?$": "babel-jest"
   },
