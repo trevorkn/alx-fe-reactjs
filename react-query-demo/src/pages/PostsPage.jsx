@@ -19,7 +19,7 @@ export default function PostsPage() {
         // gcTime: 5 * 60 * 1000,
         // refetchOnWindowFocus: false,
     })
-
+      //PostComponent
     const handleInvalidate = () => {
         //Mark cached data stale: next mount or next interaction refetches data
         queryClient.invalidateQueries({ queryKey: ['posts']})

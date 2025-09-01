@@ -34,7 +34,7 @@ export default function App() {
         </div>
       </nav>
       </header>
-
+        
       <main className='min-h-screen bg-gray-900 px-4 py-8 text-gray-100'>
         <div className='mx-auto max-w-5xl'>
           <Routes>
